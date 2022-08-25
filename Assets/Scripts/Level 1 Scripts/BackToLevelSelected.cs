@@ -6,28 +6,28 @@ using System.IO;
 
 public class BackToLevelSelected : MonoBehaviour
 {
-    //ниже две пермеенные мы можем использовать для того, чтобы разблокировать следующий уровень при прохождении предыдущего. Мы моэем использовать две переменные: int или string в медоде LevelEnd, где используется PlayerPrefs. Int обозначает индекс следующей сцены, которую нужно раблокировать, а string название той сцены, которую нужно разблокировать. Использовать можно что-то одно
-    public string nextLevel = "Level2";
-    public int levelToUnlock = 1;
+    public int levelToUnlock;//переменная, которая будет использоваться для того, чтобы разблокировать следующий уровень
 
-    private void Start()
+    private void Update()
     {
-        levelToUnlock++;
+        TransferValueLevelToUnlock.valueLevelToUnlock = levelToUnlock;
     }
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
-
-        LevelEnd();
-
         Debug.Log("Количесвто звёзд в меню выбора уровней: " + TransferStars.transferStras);
+        levelToUnlock++;//делаем инкремент данной переменной для того, чтобы когда игрок зайдёт в меню выбора уровня, ему был доступен следующий уровень
     }
 
-    private void LevelEnd()
+    private void OnEnable()
     {
-        
-        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        if (TransferValueLevelToUnlock.valueLevelToUnlock != 0)
+        {
+            levelToUnlock = TransferValueLevelToUnlock.valueLevelToUnlock;
+        }
     }
-
-
+    private void OnDestroy()
+    {
+        TransferValueLevelToUnlock.valueLevelToUnlock = levelToUnlock;
+    }
 }

@@ -13,7 +13,4 @@ public class MainMenuPlayBtn : MonoBehaviour
         gameModeMenu.SetActive(true);
         mainMenu.SetActive(false);
     }
-
-
-
 }

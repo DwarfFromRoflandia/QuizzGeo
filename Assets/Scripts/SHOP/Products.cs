@@ -12,12 +12,15 @@ public class Products : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI quantityTheUsualHintText;
     [SerializeField] private TextMeshProUGUI multiplierTheUsualHintText;
-    private int quantityTheUsualHint;
     
+    private int quantityTheUsualHint;
+    public int QuantityTheUsualHint { get { return quantityTheUsualHint; } set { quantityTheUsualHint = value; } }
+
     [SerializeField] private TextMeshProUGUI quantityTheFiftyFiftyHintText;
     [SerializeField] private TextMeshProUGUI multiplierTheFiftyFiftyHintText;
+    
     private int quantityTheFiftyFiftyHint;
-
+    public int QuantityTheFiftyFiftyHint { get { return quantityTheFiftyFiftyHint; } set { quantityTheFiftyFiftyHint = value; } }
 
     [SerializeField] private HeartsVersionTwo _hearts;
     [SerializeField] private TimerHearts _timerHearts;
@@ -33,8 +36,7 @@ public class Products : MonoBehaviour
     [SerializeField] private Animator quantityAnimationTheUsualHint;
     [SerializeField] private Animator quantityAnimationTheFiftyFiftyHint;
 
-    [SerializeField] private CountGem _countGem;//ПОСМОТРЕТЬ ВИДЕО У СИМПЛ КОДА ПРО СВОЙСТВА GET И SET И ПОНЯТЬ, КАК ПОЛУЧИТЬ ДОСТУП К ЗНАЧЕНИЮ ПЕРЕМЕННОЙ quantityGem В СКРИПТЕ CountGem, А ТАКЖЕ ОТРЕФАКТОРИТЬ СКРИПТ PurchaseIsNotAvailable
-    private PurchaseIsNotAvailable _purchaseIsNotAvailable;
+    [SerializeField] private CountGem _countGem;
 
 
     private const float  timeOnOffNumber = 1f; //ВРЕМЯ РАБОТЫ КОРУТИНЫ ЗАВИСИТ ОТ ВРЕМЕНИ АНИМАЦИИ ТОВАРОВ
@@ -48,31 +50,28 @@ public class Products : MonoBehaviour
     private bool isHeartsRecovered = false;
     public bool IsheartsRecovered { get { return isHeartsRecovered; } set { isHeartsRecovered = value; } }
 
-    private void Start()
+    private void Update()
     {
-        quantityTheUsualHint = 0;
-        quantityTheFiftyFiftyHint = 0;
+        RestoringHearts();
+        
+        TransferTheUsualHint.transferQuantityTheUsualHint = quantityTheUsualHint;
+        TransferTheFiftyFiftyHint.transferQuantityTheFiftyFiftyHint = quantityTheFiftyFiftyHint;
+    }
+
+    private void LateUpdate() //используем здесь метод LateUpdate для того, чтобы анимация успевала обновляться в то время, когда игрок заходит в магазин
+    {
+        IsCoroutineBuyTheUsualHint();
+        IsCoroutineBuyFiftyFiftyHint();
 
         SetDisabledTheUsualHintText();
         SetDisabledTheFiftyFiftyHintText();
 
-        _purchaseIsNotAvailable = GetComponent<PurchaseIsNotAvailable>();
-
-        quantityTheUsualHint = TransferTheUsualHint.transferQuantityTheUsualHint;
-        quantityTheFiftyFiftyHint = TransferTheFiftyFiftyHint.transferQuantityTheFiftyFiftyHint;
-    }
-    private void Update()
-    {
-        IsCoroutineBuyTheUsualHint();
-        IsCoroutineBuyFiftyFiftyHint();
-        RestoringHearts();
-        
         AnimationOfTheFirstProduct();
         AnimationOfTheFiftyFiftyHint();
         AnimationHearts();
     }
 
-    
+
     public void ByeTheUsualHint()
     {
         Debug.Log("Bye The Usual Hint");
@@ -107,8 +106,7 @@ public class Products : MonoBehaviour
 
         _hearts.HeartOneFull.fillAmount = 1;
         _hearts.HeartTwoFull.fillAmount = 1;
-        _hearts.HeartThreeFull.fillAmount = 1;
-
+        _hearts.HeartThreeFull.fillAmount = 1;   
     }
 
     private void RestoringHearts()
@@ -121,7 +119,6 @@ public class Products : MonoBehaviour
             _hearts.IsOneHearts = false;
             _hearts.NoHearts = false;
         }
-
     }
 
     private void SetQuantityTheUsualHint()
@@ -129,20 +126,18 @@ public class Products : MonoBehaviour
         quantityTheUsualHint++;
         quantityTheUsualHintText.text = quantityTheUsualHint.ToString();
         Debug.Log("Количество обычных подсказок: " + quantityTheUsualHint);
-
     }
 
     private void SetQuantityTheFiftyFiftyHint()
     {
         quantityTheFiftyFiftyHint++;
         quantityTheFiftyFiftyHintText.text = quantityTheFiftyFiftyHint.ToString();
-        Debug.Log("Количество подсказок 50/50: " + quantityTheFiftyFiftyHint);
-        
+        Debug.Log("Количество подсказок 50/50: " + quantityTheFiftyFiftyHint);       
     }
 
 
 
-    IEnumerator CoroutineBuyTheUsualHint()
+    public IEnumerator CoroutineBuyTheUsualHint()
     {     
         Debug.Log("Начало корутины TheUsualHint");
         coroutineBuyTheUsualHint = true;
@@ -151,12 +146,12 @@ public class Products : MonoBehaviour
 
         yield return new WaitForSeconds(timeOnOffNumber);
 
-        SetDisabledTheUsualHintText();
-
         coroutineBuyTheUsualHint = false;
+        
+        SetDisabledTheUsualHintText(); 
     }
 
-    IEnumerator CoroutineTheFiftyFiftyHint()
+    public IEnumerator CoroutineTheFiftyFiftyHint()
     {
         Debug.Log("Начало корутины TheFiftyFiftyHint");
         coroutineBuyFiftyFiftyHint = true;
@@ -165,9 +160,9 @@ public class Products : MonoBehaviour
 
         yield return new WaitForSeconds(timeOnOffNumber);
 
-        SetDisabledTheFiftyFiftyHintText();
-
         coroutineBuyFiftyFiftyHint = false;
+        
+        SetDisabledTheFiftyFiftyHintText();    
     }
 
     private void IsCoroutineBuyTheUsualHint()
@@ -188,7 +183,6 @@ public class Products : MonoBehaviour
             animationTheUsualHint.SetBool("AnimationTheUsualHint", true);
         else if (shopOpenAndExit.IsShopClosed == true)
             animationTheUsualHint.SetBool("AnimationTheUsualHint", false);
-
     }
 
     private void AnimationOfTheFiftyFiftyHint()
@@ -197,7 +191,6 @@ public class Products : MonoBehaviour
             animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", true);
         else if (shopOpenAndExit.IsShopClosed == true)
             animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", false);
-
     }
 
     private void AnimationHearts()
@@ -209,14 +202,20 @@ public class Products : MonoBehaviour
     }
     private void SetDisabledTheUsualHintText()
     {
-        quantityTheUsualHintText.gameObject.SetActive(false);
-        multiplierTheUsualHintText.gameObject.SetActive(false);
+        if (!coroutineBuyTheUsualHint)
+        {
+            quantityTheUsualHintText.gameObject.SetActive(false);
+            multiplierTheUsualHintText.gameObject.SetActive(false);
+        }       
     }
 
     private void SetDisabledTheFiftyFiftyHintText()
     {
-        quantityTheFiftyFiftyHintText.gameObject.SetActive(false);
-        multiplierTheFiftyFiftyHintText.gameObject.SetActive(false);
+        if (!coroutineBuyFiftyFiftyHint)
+        {
+            quantityTheFiftyFiftyHintText.gameObject.SetActive(false);
+            multiplierTheFiftyFiftyHintText.gameObject.SetActive(false);
+        }
     }
 
     private void SetEnabledTheUsualHintText()
@@ -249,8 +248,4 @@ public class Products : MonoBehaviour
         TransferTheUsualHint.transferQuantityTheUsualHint = quantityTheUsualHint;
         TransferTheFiftyFiftyHint.transferQuantityTheFiftyFiftyHint = quantityTheFiftyFiftyHint;
     }
-
-
-
-
 }

@@ -9,7 +9,6 @@ public class BackToGameModeMenu : MonoBehaviour
     
     public void BackToMenuHundler()
     {
-        levelSelected.SetActive(false);
-        
+        levelSelected.SetActive(false);       
     }    
 }

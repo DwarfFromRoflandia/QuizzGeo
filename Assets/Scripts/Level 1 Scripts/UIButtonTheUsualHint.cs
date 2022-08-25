@@ -16,7 +16,6 @@ public class UIButtonTheUsualHint : MonoBehaviour, IPointerDownHandler, IPointer
 
     private bool lastUsualHintUsed;//булевска€ переменна€, котора€ отвечает за то событие, когда игрок заюзал последнюю подсказку
 
-
     private void Update()
     {
         IsLastUsualHintUsed();
@@ -84,5 +83,4 @@ public class UIButtonTheUsualHint : MonoBehaviour, IPointerDownHandler, IPointer
         else
             clampedButton = false;
     }
-
 }

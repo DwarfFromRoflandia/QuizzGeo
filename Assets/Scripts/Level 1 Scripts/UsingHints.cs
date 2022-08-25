@@ -23,10 +23,13 @@ public class UsingHints : MonoBehaviour
     }
     private void Update()
     {
-        AssignQuantityTheUsualHint();
+        UsingTheFiftyFiftyHintIsAvailable();
+    }    
 
+    private void LateUpdate()//используем здесь LateUpdate для того, чтобы при обновлении вопроса числа количества подсказок не мерцали
+    {
         AssignQuantityTheFiftyFiftyHint();
-        UsingTheFiftyFiftyHintIsAvailable();     
+        AssignQuantityTheUsualHint();
     }
 
     public void UsingTheFiftyFiftyHint()

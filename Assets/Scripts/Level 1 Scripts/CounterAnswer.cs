@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class CounterAnswer : MonoBehaviour
 {
- 
     private int score;
     private CounterOfCorrectAnswer counterOfCorrectAnswer;
 
     public int Score { get => score; }//свойство это будет использоваться для того, чтобы подсчитывать количество звёзд на самом уровне в скрипте StarsCount
-
 
     public void CountScore()
     {
@@ -52,9 +50,5 @@ public class CounterAnswer : MonoBehaviour
             Debug.Log("*********9*********");
         }
     }
-
-
-
-
 }
 

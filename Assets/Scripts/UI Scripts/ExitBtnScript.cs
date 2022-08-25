@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ExitBtnScript : MonoBehaviour
 {
-
     public void ExitHundler()
     {
         Application.Quit();
         Debug.Log("Exit");
-    }
-   
+    } 
 }

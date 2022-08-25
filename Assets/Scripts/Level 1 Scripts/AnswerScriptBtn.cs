@@ -54,7 +54,6 @@ public class AnswerScriptBtn : MonoBehaviour
     {
         WaitTime = timeToWait;
         IndexLevel();
-
         
         usingHints = GetComponent<UsingHints>();
     }
@@ -72,7 +71,6 @@ public class AnswerScriptBtn : MonoBehaviour
         {
             _isTimer = false;
         }
-
     }
 
     public void RightAnswerHundler()
@@ -87,11 +85,8 @@ public class AnswerScriptBtn : MonoBehaviour
         isAnswerInCorrectly = false;
 
         counter.CountScore();
-        //counterOfCorrectAnswer.Points();
 
-        CounterCorrectAnswer();
-        
-        
+        CounterCorrectAnswer();     
     }
 
     public void WrongAnserHundler()
@@ -104,23 +99,19 @@ public class AnswerScriptBtn : MonoBehaviour
         Debug.Log("Answer False");
         isAnswerInCorrectly = true;
         isAnswerCorrectly = false;
-        CounterInCorrectAnswer();
-    
-        
+        CounterInCorrectAnswer();       
     }
 
     private void Correctly()
     {
-        TheSecondAnswerButton.GetComponent<Image>().color = Color.green;
-        
+        TheSecondAnswerButton.GetComponent<Image>().color = Color.green;       
     }
 
     private void InCorrectly()
     {
         TheFirstAnswerButton.GetComponent<Image>().color = Color.red;
         ThirdAnswerButton.GetComponent<Image>().color = Color.red;
-        TheFourthAnswerButton.GetComponent<Image>().color = Color.red;
-        
+        TheFourthAnswerButton.GetComponent<Image>().color = Color.red;      
     }
 
     private void ActivateTheFiftyFiftyHint()
@@ -139,13 +130,11 @@ public class AnswerScriptBtn : MonoBehaviour
     {
         WaitTime -= Time.deltaTime;
         if (WaitTime <= 0)
-        {
-            
+        {            
             WaitTime = timeToWait;
             GreenOrRedLamp();
             ChangeQuestion();
-            _isTimer = false;
-            
+            _isTimer = false;          
         }
     }
 
@@ -167,7 +156,6 @@ public class AnswerScriptBtn : MonoBehaviour
         {
             isAnswerInCorrectly = true;
         }
-  
     }
 
     public void CounterInCorrectAnswer()
@@ -180,10 +168,8 @@ public class AnswerScriptBtn : MonoBehaviour
         {
             isAnswerCorrectly = true;
         }
-
     }
    
-
     private void CountClick()//метод, отвечающий за то, что когда деактивировать кнопки в случае какого-либо ответа
     {
         if (isClick)
@@ -193,7 +179,6 @@ public class AnswerScriptBtn : MonoBehaviour
             ThirdAnswerButton.enabled = false;
             TheFourthAnswerButton.enabled = false;
         }
-
     }
     public void GreenOrRedLamp()
     {
@@ -308,5 +293,4 @@ public class AnswerScriptBtn : MonoBehaviour
     {
         TransferIndexLevel.transferIndexLevel = indexLevel;
     }
-
 }

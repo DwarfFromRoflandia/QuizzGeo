@@ -28,21 +28,21 @@ public class Bank
     {
         TransferGem.transferGems += 3;
         
-        Debug.Log("qq");
+        Debug.Log("PlusThreeGem");
     }
 
     public void PlusSixGem()
     {
         TransferGem.transferGems += 6;
         
-        Debug.Log("cc");
+        Debug.Log("PlusSixGem");
     }
 
     public void PlusNineGem()
     {
         TransferGem.transferGems += 9;
 
-        Debug.Log("bb");
+        Debug.Log("PlusNineGem");
     }
 
     public void Stars()

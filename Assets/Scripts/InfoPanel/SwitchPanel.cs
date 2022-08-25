@@ -11,12 +11,7 @@ public class SwitchPanel : MonoBehaviour
     [SerializeField] private TimerHearts _timerHearts;
 
     private bool isOpenCreamPanel;
-    public bool IsOpenCreamPanel { get => isOpenCreamPanel; }
-
-    //private void Update()
-    //{
-    //    IsCreamPanel();
-    //}
+    public bool IsOpenCreamPanel { get { return isOpenCreamPanel; } set { isOpenCreamPanel = value; } }
 
     public void TurnOnOrangePanel()
     {
@@ -47,5 +42,4 @@ public class SwitchPanel : MonoBehaviour
         else
             isOpenCreamPanel = false;
     }
-
 }

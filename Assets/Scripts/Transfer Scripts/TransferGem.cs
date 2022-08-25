@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class TransferGem : MonoBehaviour
 {
-    public static int transferGems = 0;
-    
+    public static int transferGems = 0;    
 }

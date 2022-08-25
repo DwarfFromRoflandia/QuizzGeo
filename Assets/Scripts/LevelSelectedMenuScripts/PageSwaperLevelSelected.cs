@@ -16,18 +16,11 @@ public class PageSwaperLevelSelected : MonoBehaviour, IDragHandler, IEndDragHand
     public int totalPages = 1;//переменная, отвечающая за то, сколько всего панелей с уровнями у нас будет.
     private int currentPage = 1;//переменная, которая обзначает текущую панель, на которой находится игрок
 
-
-    //[SerializeField] private GameObject PointerOneEmpty;
-    //[SerializeField] private GameObject PointerTwoEmpty;
-    //[SerializeField] private GameObject PointerThreeEmpty;
-
     public GameObject[] _Pointers;
 
     private void Start()
     {
-        panelLocation = transform.position;//определяем позицию путём присваиваения в переменную, которая отвечает за местоположение панели с уровнями, текущее значение позиции  
-
-       
+        panelLocation = transform.position;//определяем позицию путём присваиваения в переменную, которая отвечает за местоположение панели с уровнями, текущее значение позиции
     }
 
     //этот встроенный метод, который определяет свайпы привязан к классу IDragHandler
@@ -93,9 +86,7 @@ public class PageSwaperLevelSelected : MonoBehaviour, IDragHandler, IEndDragHand
         }
 
     }
-
-    
-
+  
     //этот метод нам нужен для того, чтобы у нас был плавный и мягкий переход между панелями. Этот метод приводит перемещение позиции панели из изначальной позиции в n-позицию за определённое количество секунд, которое мы определяем в этом методе
     IEnumerator SmoothMove(Vector3 startpos, Vector3 endpos, float seconds)//передаём в метод три параметра
     {
@@ -108,5 +99,4 @@ public class PageSwaperLevelSelected : MonoBehaviour, IDragHandler, IEndDragHand
             yield return null;//т.е. этой строчкой мы говорим, что мы хотим, чтобы наш метод дождался следующего кадра(фрейма), прежде чем продожить
         }
     }
-
 }

@@ -11,7 +11,6 @@ public class TimerHearts : MonoBehaviour
     [SerializeField] private Text timerText;
     [SerializeField] private float startMinutes; //данная переменная задаёт начальное значение 
     [SerializeField] private Button btnBigGeoTrip;
-    [SerializeField] private GameObject heartsInfoBtn;
 
     [SerializeField] private Animator animatorFirstHeart;
     [SerializeField] private Animator animatorSecondHeart;
@@ -19,9 +18,9 @@ public class TimerHearts : MonoBehaviour
 
     [SerializeField] private Products products;
 
-    private float timeUntilTheFirstHeartRestored = 580;
-    private float timeUntilTheSecondHeartRestored = 575; 
-    private float timeUntilTheThirdHeartRestored = 570;  
+    private float timeUntilTheFirstHeartRestored = 200;//200
+    private float timeUntilTheSecondHeartRestored = 100; //100
+    private float timeUntilTheThirdHeartRestored = 10;  //10
 
 
     private HeartsVersionTwo hearts;
@@ -31,8 +30,7 @@ public class TimerHearts : MonoBehaviour
     private bool isTimer  = false;
 
     public bool IsTimer { get { return isTimer;} set { isTimer = value; } }
-
-
+ 
     public void StopTimer()
     {
         isTimer = false;
@@ -52,12 +50,9 @@ public class TimerHearts : MonoBehaviour
                 ontime = startMinutes;
             }
             RecoveryHearts();
-
             AnimationRecoveryOfTheFirstHeart();
             AnimationRecoveryOfTheSecondHeart();
             AnimationRecoveryOfTheThirdHeart();
-
-
         }
         TimeSpan time = TimeSpan.FromSeconds(ontime); //данной строчкой мы будем конвертировать секунды в минуты
         timerText.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();//задаём формат нашего таймера
@@ -70,11 +65,7 @@ public class TimerHearts : MonoBehaviour
 
     //метод, который восстанавливает сердца
     private void RecoveryHearts()
-    {
-        //КОГДА БУДЕТ ГОТОВА ЛОГИКА СЕРДЕЧЕК, ИСПРАВИТЬ СЕКУНДЫ НИЖЕ, ЧТОБЫ ПЕРВОЕ СЕРДЦЕ ПОЯВИЛОСЬ НЕ ЧЕРЕЗ 30 СЕК, А ЧЕРЕЗ НЕСКОЛЬКО МИНУТ
-
-        //    //ДОБАВИТЬ ВОЗМОЖНОСТЬ С ПОМОЩЬЮ КОТОРОЙ ЧЕТВЁРТЫЙ УРОВЕНЬ НЕЛЬЗЯ БУДЕТ НАЧАТЬ ПРОХОДИТЬ, ПОКА НЕ ВОССТАНОВИЛИСЬ ВСЕ ТРИ СЕРДЕЧКА.
-
+    {  
         if (ontime <= timeUntilTheFirstHeartRestored)
         {         
             hearts.NoHearts = false;
@@ -104,29 +95,34 @@ public class TimerHearts : MonoBehaviour
     {
         if (ontime >= timeUntilTheFirstHeartRestored)
         {
-            hearts.HeartOneFull.gameObject.SetActive(true);           
+            hearts.HeartOneFull.gameObject.SetActive(true);
+            hearts.HeartTwoFull.gameObject.SetActive(false);
+            hearts.HeartThreeFull.gameObject.SetActive(false);            
         }
-        animatorFirstHeart.SetBool("TheRecoveringFirstHeart", hearts.NoHearts == true);
 
+        animatorFirstHeart.SetBool("TheRecoveringFirstHeart", hearts.NoHearts == true);
     }
 
     private void AnimationRecoveryOfTheSecondHeart()
     {
         if (ontime >= timeUntilTheSecondHeartRestored && ontime < timeUntilTheFirstHeartRestored)
         {
-            hearts.HeartTwoFull.gameObject.SetActive(true);          
+            hearts.HeartOneFull.gameObject.SetActive(true);
+            hearts.HeartTwoFull.gameObject.SetActive(true);
+            hearts.HeartThreeFull.gameObject.SetActive(false);           
         }
         animatorSecondHeart.SetBool("TheRecoveringSecondHeart", hearts.IsOneHearts == true);
+
     }
 
     private void AnimationRecoveryOfTheThirdHeart()
     {
         if (ontime >= timeUntilTheThirdHeartRestored && ontime < timeUntilTheSecondHeartRestored)
         {
-            hearts.HeartThreeFull.gameObject.SetActive(true);     
+            hearts.HeartOneFull.gameObject.SetActive(true);
+            hearts.HeartTwoFull.gameObject.SetActive(true);
+            hearts.HeartThreeFull.gameObject.SetActive(true);          
         }
         animatorThirdHeart.SetBool("TheRecoveringThirdHeart", hearts.IsTwoHearts == true);
-    }
-
-        
+    }       
 }

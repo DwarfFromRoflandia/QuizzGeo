@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{746824D4-CA76-04B9-32E5-5EFA8BAA603A}</ProjectGuid>
+    <ProjectGuid>{2BA6DEF8-FA1C-3232-29D5-5A0953E07C59}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,42 +70,42 @@
     <Compile Include="Assets\Scripts\Level 1 Scripts\UsingHints.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\CounterAnswer.cs" />
-    <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferTheFiftyFiftyHint.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\BGTStars.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\UWantOnShop.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\AnswerScriptBtn.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Save\Data.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\StarsCount.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\TimerRing.cs" />
     <Compile Include="Assets\Scripts\SHOP\Products.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\UIButtonTheUsualHint.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\ShopOpenAndExit.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferGem.cs" />
-    <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\RightLeftBtnScript.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\BackToGameModeMenu.cs" />
     <Compile Include="Assets\Scripts\SHOP\PurchaseIsNotAvailable.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BtnBGTMode.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\ClickMeBTN.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitBtnScript.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\LockLevel.cs" />
+    <Compile Include="Assets\Scripts\Transfer Scripts\TransferCountLoadGameIndex.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\LampScript.cs" />
     <Compile Include="Assets\Scripts\Singleton\Bank.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\CounterOfCorrectAnswer.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferHearts.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveAndLoadData.cs" />
     <Compile Include="Assets\Scripts\SHOP\PageSwaperShop.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitBTNToLevelSelected.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MainMenuPlayBtn.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\HeartsVersionTwo.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferTheUsualHint.cs" />
+    <Compile Include="Assets\Scripts\Transfer Scripts\TransferValueLevelToUnlock.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\BackToLevelSelected.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferSaveManager.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferStars.cs" />
     <Compile Include="Assets\Scripts\InfoPanel\OpenAndExitInfoPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BackToMenu.cs" />
-    <Compile Include="Assets\Scripts\Save\Data.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveAndLoadData.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

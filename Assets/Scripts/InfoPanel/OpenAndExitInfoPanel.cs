@@ -18,12 +18,7 @@ public class OpenAndExitInfoPanel : MonoBehaviour
     private bool needClosePanel = false;
 
     private bool isOpenInfoPanel;
-    public bool IsOpenInfoPanel { get => isOpenInfoPanel; }
-
-    //private void Update()
-    //{
-    //    IsInfoPanel();
-    //}
+    public bool IsOpenInfoPanel { get { return isOpenInfoPanel; } set { isOpenInfoPanel = value; } }
 
     public void OpenInfoPanel()
     {
@@ -37,8 +32,6 @@ public class OpenAndExitInfoPanel : MonoBehaviour
         StartCoroutine(CloseInfoPanel());
         _animator.SetTrigger("CloseInfoPanel");
     }
-
-
 
     IEnumerator CloseInfoPanel()
     {
@@ -61,6 +54,4 @@ public class OpenAndExitInfoPanel : MonoBehaviour
         else
             isOpenInfoPanel = false;
     }
-
-
 }

@@ -6,7 +6,6 @@ using System;
 
 public class AnimationOnTheResultPanel : MonoBehaviour
 {
-
     [SerializeField] private AnswerScriptBtn answerScriptBtn;
 
     [SerializeField] private Animator animationFirstStar;
@@ -31,10 +30,21 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         starsCount = GetComponent<StarsCount>();
         counterOfCorrectAnswer = GetComponent<CounterOfCorrectAnswer>();
 
-        StartAnmationStars();
-
         buttonExitToMenu.enabled = false;
 
+        StartAnmationStars();
+    }
+
+    public IEnumerator CoroutineAnimationZeroStar(Action callBack)
+    {
+        Debug.Log("CoroutineAnimationZeroStar");
+
+        yield return new WaitForSeconds(0.5f);
+        callBack.Invoke();
+
+        yield return new WaitForSeconds(0.8f);
+        buttonExitToMenu.enabled = true;
+        Debug.Log("End");
     }
 
     public IEnumerator CoroutineAnimationOneStar(Action callBack)
@@ -42,15 +52,15 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         Debug.Log("CoroutineAnimationOneStar");
 
         yield return new WaitForSeconds(0.5f); 
-
         animationFirstStar.SetTrigger("AnimFirstStar");
 
 
         yield return new WaitForSeconds(1f);
-
-        Debug.Log("End");
-
         callBack.Invoke();
+
+        yield return new WaitForSeconds(0.8f);
+        buttonExitToMenu.enabled = true;
+        Debug.Log("End");
     }
 
     public IEnumerator CoroutineAnimationTwoStars(Action callBack)
@@ -58,18 +68,17 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         Debug.Log("CoroutineAnimationTwoStars");
 
         yield return new WaitForSeconds(0.5f);
-
         animationFirstStar.SetTrigger("AnimFirstStar");
 
         yield return new WaitForSeconds(1f);
-
         animationSecondStar.SetTrigger("AnimSecondStar");
 
         yield return new WaitForSeconds(1f);
-
-        Debug.Log("End");
-
         callBack.Invoke();
+
+        yield return new WaitForSeconds(0.8f);
+        buttonExitToMenu.enabled = true;
+        Debug.Log("End");
     }
 
     public IEnumerator CoroutineAnimationThreeStars(Action callBack)
@@ -77,31 +86,27 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         Debug.Log("CoroutineAnimationThreeStars");
 
         yield return new WaitForSeconds(0.5f);
-
         animationFirstStar.SetTrigger("AnimFirstStar");
         Debug.Log("AnimFirstStar");
 
         yield return new WaitForSeconds(1f);
-
         animationSecondStar.SetTrigger("AnimSecondStar");
         Debug.Log("AnimSecondStar");
 
         yield return new WaitForSeconds(1f);
-
         animationThirdStar.SetTrigger("AnimThirdStar");
         Debug.Log("AnimThirdStar");
 
         yield return new WaitForSeconds(1f);
-
-        Debug.Log("End");
-
         callBack.Invoke();
 
+        yield return new WaitForSeconds(0.8f);
+        buttonExitToMenu.enabled = true;
+        Debug.Log("End");
     }
     
-    private void ExitToMenuAnim()
-    {
-        buttonExitToMenu.enabled = true;
+    private void ExitToMenuAnim()// в теории можно было бы и не использовать тип Action и не засовывать этот метод в него, но я хотел бы чтобы он хоть где-то был (0_o)
+    {   
         animatinButton.SetTrigger("ButtonExitToMenu");
     }
 
@@ -200,7 +205,7 @@ public class AnimationOnTheResultPanel : MonoBehaviour
     {
         if (counterAnswer.Score >= 0 && counterAnswer.Score < 3)
         {
-            ExitToMenuAnim();
+            StartCoroutine(CoroutineAnimationZeroStar(ExitToMenuAnim));
         }
 
         if (counterAnswer.Score >= 3 && counterAnswer.Score < 6)

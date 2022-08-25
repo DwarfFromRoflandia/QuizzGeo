@@ -26,5 +26,4 @@ public class UWantOnShop : MonoBehaviour
     {
         uWantOnShopPanel.SetActive(false);
     }
-
 }

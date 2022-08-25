@@ -3,10 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PurchaseIsNotAvailable : MonoBehaviour
 {
-
     [SerializeField] private CountGem _quantityGem;
     [SerializeField] private TimerHearts _timerHearts;
-
 
     public TextMeshProUGUI[] TMPArray;
     public TextMeshProUGUI[] InsufficientFundsArray;
@@ -21,7 +19,7 @@ public class PurchaseIsNotAvailable : MonoBehaviour
     public Button _BuyTheFiftyFiftyHint;
     public Button _BuyHealth;
 
-    private void Update()
+    private void LateUpdate()
     {
         AreTheButtonsAvailable();
 
@@ -321,5 +319,4 @@ public class PurchaseIsNotAvailable : MonoBehaviour
             }
         }
     }
-
 }

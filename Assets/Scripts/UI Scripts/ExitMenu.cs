@@ -15,5 +15,4 @@ public class ExitMenu : MonoBehaviour
     {
         ExitCanvas.SetActive(false);
     }
-
 }

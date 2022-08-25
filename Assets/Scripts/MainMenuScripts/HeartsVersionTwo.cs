@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HeartsVersionTwo : MonoBehaviour
-{
-    
+{   
     [SerializeField] private GameObject ShopMenu; //в эту переменную в редакторе юни присваиваем объект магазина
 
     //переменные в которые присваиваем спарйты сердец
@@ -26,7 +25,7 @@ public class HeartsVersionTwo : MonoBehaviour
     
 
     //булевские переменные, отвечающие за то, условие, когда нужно удалять спрайты сердец
-    private bool isFullHearts = true;
+    private bool isFullHearts = false;
     public bool IsFullHearts { get { return isFullHearts; } set { isFullHearts = value; } }
 
     private bool isTwoHearts = false;
@@ -40,26 +39,29 @@ public class HeartsVersionTwo : MonoBehaviour
 
     private void Start()
     {
-        quantityHearts = TransferHearts.transferHearts;
         timer = GetComponent<TimerHearts>();
-
-       
     }
 
     //данный метод ссылается на другой метод в скрипте TimerHearts, который запускает таймер
     private void Update()
     {
         timer.HeartsTimer();
+
         DestructionHearts();
 
+        TransferHearts.transferHearts = quantityHearts;
+    }
+
+    private void LateUpdate()
+    {
+        if (timer.IsTimer == true) PanelTimerHealth.SetActive(true);
     }
 
     //метод, отвечающий за удаление сердец при определённом условии(уменьшении времени и значение булевских переменных)
     private void DestructionHearts() 
     {
         if (quantityHearts == 3)
-        {
-            
+        {          
             HeartThreeFull.gameObject.SetActive(true);
             HeartTwoFull.gameObject.SetActive(true);
             HeartOneFull.gameObject.SetActive(true);
@@ -72,8 +74,7 @@ public class HeartsVersionTwo : MonoBehaviour
             HeartThreeFull.gameObject.SetActive(false);
 
             isTwoHearts = true;
-            isFullHearts = false;
-           
+            isFullHearts = false;         
         }
         if (quantityHearts <= 1 && timer.IsTimer == false)
         {
@@ -86,15 +87,10 @@ public class HeartsVersionTwo : MonoBehaviour
         {
             HeartOneFull.gameObject.SetActive(false);
 
-            PanelTimerHealth.SetActive(true);
-
             noHearts = true;
             isOneHearts = false;
 
-            timer.IsTimer = true;
-            
-
-
+            timer.IsTimer = true;          
         }
     }
 
@@ -111,6 +107,4 @@ public class HeartsVersionTwo : MonoBehaviour
     {
         TransferHearts.transferHearts = quantityHearts;
     }
-
-
 }

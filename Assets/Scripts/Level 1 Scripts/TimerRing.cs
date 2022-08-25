@@ -56,5 +56,4 @@ public class TimerRing : MonoBehaviour
             Debug.Log("Time is out");
         }
     }
-
 }

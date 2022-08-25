@@ -7,5 +7,4 @@ using UnityEngine;
 public class TransferStars : MonoBehaviour
 {
     public static int transferStras = 0;//создаём публичную статическую переменную, в которую будет записываться значение из скрипта CounterAnswer 
-
 }

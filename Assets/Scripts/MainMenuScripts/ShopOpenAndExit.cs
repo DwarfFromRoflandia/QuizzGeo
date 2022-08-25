@@ -13,10 +13,6 @@ public class ShopOpenAndExit : MonoBehaviour
     private bool isShopClosed = true;
     public bool IsShopClosed { get { return isShopClosed; } set { isShopClosed = value; } }
 
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         ForcedShutdownCoroutines();
@@ -30,7 +26,7 @@ public class ShopOpenAndExit : MonoBehaviour
     {
         panelShop.SetActive(false);
         products.IsheartsRecovered = false;
-        isShopClosed = true;
+        isShopClosed = true;  
     } 
 
     private void ForcedShutdownCoroutines()

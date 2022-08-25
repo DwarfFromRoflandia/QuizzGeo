@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StarsCount : MonoBehaviour
-{
-    
+{    
     [SerializeField] private CounterAnswer scoreCount;
 
     [Header("¬ключЄнные звЄзды")]
@@ -48,8 +47,6 @@ public class StarsCount : MonoBehaviour
 
         }   
     }
-
-
     private void OnEnable()
     {
         if (TransferStars.transferStras != 0)
@@ -62,7 +59,4 @@ public class StarsCount : MonoBehaviour
     {
         TransferStars.transferStras = countStar;
     }
-
-
-
 }

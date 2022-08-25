@@ -65,5 +65,4 @@ public class SignsAttention : MonoBehaviour
             SecondQuestionMarkAnim.SetTrigger("OnAnimSecondQuestionMark");
         }
     }
-
 }

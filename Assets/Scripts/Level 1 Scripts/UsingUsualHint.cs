@@ -8,7 +8,6 @@ public class UsingUsualHint : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private TextMeshProUGUI hint;
-
     
     [SerializeField] private Animator animationQuestion;
     [SerializeField] private Animator animationHint;
@@ -24,5 +23,4 @@ public class UsingUsualHint : MonoBehaviour
         animationQuestion.SetTrigger("OnQuestion");
         animationHint.SetTrigger("OffHint");
     }
-
 }
