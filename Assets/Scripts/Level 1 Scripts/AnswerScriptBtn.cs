@@ -26,7 +26,7 @@ public class AnswerScriptBtn : MonoBehaviour
     [SerializeField] private CounterOfCorrectAnswer counterOfCorrectAnswer;
 
     [Header("Лампы")]
-    [SerializeField]private LampScript lamp;
+    //[SerializeField]private LampScript lamp;
     [SerializeField] private GameObject greenLamp;
     [SerializeField] private GameObject redLamp;
 
@@ -49,6 +49,8 @@ public class AnswerScriptBtn : MonoBehaviour
     public bool _IsTimer { get => _isTimer; }
 
     private bool isClick = false;//переменная, которая проверяет была ли нажата кнопка ответа один раз. Если да, то на дальнейшие нажатия кнопок деактивируются
+
+    private int countLamp = 1;//счётчик, который обозначает какую по счёту лампу следует включать
 
     private void Start()
     {
@@ -140,8 +142,9 @@ public class AnswerScriptBtn : MonoBehaviour
 
     public void ChangeQuestion()
     {
-        lamp.CountAnswer();
-        
+        countLamp++;
+
+
         ThisQuestion.SetActive(false);
         NextQuestion.SetActive(true);
     }
@@ -182,92 +185,92 @@ public class AnswerScriptBtn : MonoBehaviour
     }
     public void GreenOrRedLamp()
     {
-        if (lamp.Answer == 1 && correctAnswer == 1)
+        if (countLamp == 1 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 1 && correctAnswer == 0)
+        else if (countLamp == 1 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
         
-        if (lamp.Answer == 2 && correctAnswer == 1)
+        if (countLamp == 2 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if(lamp.Answer == 2 && correctAnswer == 0)
+        else if(countLamp == 2 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
         
-        if (lamp.Answer == 3 && correctAnswer == 1)
+        if (countLamp == 3 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if(lamp.Answer == 3 && correctAnswer == 0)
+        else if(countLamp == 3 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 4 && correctAnswer == 1)
+        if (countLamp == 4 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 4 && correctAnswer == 0)
+        else if (countLamp == 4 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 5 && correctAnswer == 1)
+        if (countLamp == 5 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 5 && correctAnswer == 0)
+        else if (countLamp == 5 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 6 && correctAnswer == 1)
+        if (countLamp == 6 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 6 && correctAnswer == 0)
+        else if (countLamp == 6 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 7 && correctAnswer == 1)
+        if (countLamp == 7 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 7 && correctAnswer == 0)
+        else if (countLamp == 7 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 8 && correctAnswer == 1)
+        if (countLamp == 8 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 8 && correctAnswer == 0)
+        else if (countLamp == 8 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 9 && correctAnswer == 1)
+        if (countLamp == 9 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 9 && correctAnswer == 0)
+        else if (countLamp == 9 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
 
-        if (lamp.Answer == 10 && correctAnswer == 1)
+        if (countLamp == 10 && correctAnswer == 1)
         {
             greenLamp.SetActive(true);
         }
-        else if (lamp.Answer == 10 && correctAnswer == 0)
+        else if (countLamp == 10 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
             

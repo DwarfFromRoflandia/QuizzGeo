@@ -1802,7 +1802,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717296}
   redLamp: {fileID: 448717305}
   indexLevel: 0
@@ -2825,7 +2824,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.45
+  m_fontSize: 54.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3092,7 +3091,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.35
+  m_fontSize: 58.5
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4279,7 +4278,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717311}
   redLamp: {fileID: 448717291}
   indexLevel: 0
@@ -4594,7 +4592,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717301}
   redLamp: {fileID: 448717310}
   indexLevel: 0
@@ -4931,7 +4928,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717300}
   redLamp: {fileID: 448717309}
   indexLevel: 0
@@ -5697,7 +5693,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.45
+  m_fontSize: 54.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5993,7 +5989,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717297}
   redLamp: {fileID: 448717306}
   indexLevel: 0
@@ -6173,7 +6168,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.3
+  m_fontSize: 35.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11789,7 +11784,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.7
+  m_fontSize: 35.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12632,7 +12627,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.2
+  m_fontSize: 36.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12766,7 +12761,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.6
+  m_fontSize: 36.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13118,7 +13113,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717295}
   redLamp: {fileID: 448717304}
   indexLevel: 0
@@ -15012,7 +15006,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717298}
   redLamp: {fileID: 448717307}
   indexLevel: 0
@@ -15708,7 +15701,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.35
+  m_fontSize: 58.5
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17129,7 +17122,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717293}
   redLamp: {fileID: 448717302}
   indexLevel: 0
@@ -17310,7 +17302,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717299}
   redLamp: {fileID: 448717308}
   indexLevel: 0
@@ -21497,7 +21488,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1533310138}
-  - component: {fileID: 1533310137}
   - component: {fileID: 1533310136}
   m_Layer: 0
   m_Name: Level3BGT
@@ -21539,18 +21529,6 @@ MonoBehaviour:
   - {fileID: 1044038502}
   - {fileID: 605053381}
   - {fileID: 1345475852}
---- !u!114 &1533310137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533310135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00286f28c28814e469fceee8a2982d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1533310138
 Transform:
   m_ObjectHideFlags: 0
@@ -27859,7 +27837,6 @@ MonoBehaviour:
   counter: {fileID: 438938791}
   starsCount: {fileID: 438938790}
   counterOfCorrectAnswer: {fileID: 438938786}
-  lamp: {fileID: 1533310137}
   greenLamp: {fileID: 448717294}
   redLamp: {fileID: 448717303}
   indexLevel: 0

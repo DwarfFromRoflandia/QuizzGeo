@@ -20,7 +20,9 @@ public class LoadLevel : MonoBehaviour
 
         TransferStars.transferStras = 0;
 
-        saveAndLoadData._isLoadGameData = true;
+        //saveAndLoadData._isLoadGameData = true;
+
+        saveAndLoadData.Save();
     }
 
 

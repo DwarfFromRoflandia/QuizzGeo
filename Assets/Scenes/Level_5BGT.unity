@@ -9341,7 +9341,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372333}
   redLamp: {fileID: 1885372342}
   indexLevel: 0
@@ -9881,7 +9880,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372330}
   redLamp: {fileID: 1885372339}
   indexLevel: 0
@@ -10069,7 +10067,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372334}
   redLamp: {fileID: 1885372343}
   indexLevel: 0
@@ -12077,7 +12074,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372336}
   redLamp: {fileID: 1885372345}
   indexLevel: 0
@@ -13678,7 +13674,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372332}
   redLamp: {fileID: 1885372341}
   indexLevel: 0
@@ -15406,7 +15401,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1216333964}
-  - component: {fileID: 1216333963}
   - component: {fileID: 1216333962}
   m_Layer: 0
   m_Name: Level5BGT
@@ -15429,18 +15423,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsTheUsualHint: []
   buttonsTheFiftyFiftyHint: []
---- !u!114 &1216333963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216333961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00286f28c28814e469fceee8a2982d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1216333964
 Transform:
   m_ObjectHideFlags: 0
@@ -16911,7 +16893,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372347}
   redLamp: {fileID: 1885372327}
   indexLevel: 0
@@ -18929,7 +18910,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372329}
   redLamp: {fileID: 1885372338}
   indexLevel: 0
@@ -21616,7 +21596,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372331}
   redLamp: {fileID: 1885372340}
   indexLevel: 0
@@ -26251,7 +26230,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372337}
   redLamp: {fileID: 1885372346}
   indexLevel: 0
@@ -26591,7 +26569,6 @@ MonoBehaviour:
   counter: {fileID: 967914320}
   starsCount: {fileID: 967914319}
   counterOfCorrectAnswer: {fileID: 967914315}
-  lamp: {fileID: 1216333963}
   greenLamp: {fileID: 1885372335}
   redLamp: {fileID: 1885372344}
   indexLevel: 0
