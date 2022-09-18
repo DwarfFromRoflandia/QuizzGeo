@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.5
+  m_fontSize: 58.4
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.55
+  m_fontSize: 54.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.55
+  m_fontSize: 54.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1665,7 +1665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &861995817142384372
 Transform:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861995817142384363}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.5
+  m_fontSize: 58.4
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1939,8 +1939,7 @@ MonoBehaviour:
   TheSecondAnswerButton: {fileID: 861995816141913833}
   ThirdAnswerButton: {fileID: 861995816675723355}
   TheFourthAnswerButton: {fileID: 861995816714117125}
-  ThisQuestion: {fileID: 861995817142384363}
-  NextQuestion: {fileID: 0}
+  ResultPanel: {fileID: 0}
   timeToWait: 3
   counter: {fileID: 0}
   starsCount: {fileID: 0}
@@ -1948,6 +1947,7 @@ MonoBehaviour:
   greenLamp: {fileID: 0}
   redLamp: {fileID: 0}
   indexLevel: 0
+  switchQuestion: {fileID: 0}
 --- !u!114 &861995817163985985
 MonoBehaviour:
   m_ObjectHideFlags: 0

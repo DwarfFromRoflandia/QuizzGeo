@@ -12,15 +12,15 @@ public class AnswerScriptBtn : MonoBehaviour
     [SerializeField] private Button ThirdAnswerButton;//в эту переменную присваиваем третью кнопку ответа
     [SerializeField] private Button TheFourthAnswerButton;//в эту переменную присваиваем четвёртую кнопку ответа
 
-    [Header("Нынешний и следующий вопрос")]
-    [SerializeField] private GameObject ThisQuestion;//в эту переменную присваиваем вопрос на котором находимся сейчас
-    [SerializeField] private GameObject NextQuestion;//в эту переменную присваиваем следующий вопрос
-    //[SerializeField] private GameObject ResultPanel;
+    //[Header("Нынешний и следующий вопрос")]
+    //[SerializeField] private GameObject ThisQuestion;//в эту переменную присваиваем вопрос на котором находимся сейчас
+    //[SerializeField] private GameObject NextQuestion;//в эту переменную присваиваем следующий вопрос
+    [SerializeField] private GameObject ResultPanel;
 
-    [Header("Таймер следующего вопроса")]
     [SerializeField] private float timeToWait; //переменная, отвечающая за количество времени таймера
 
     [Header("Счётчик")]
+
     [SerializeField] private CounterAnswer counter;
     [SerializeField] private StarsCount starsCount;
     [SerializeField] private CounterOfCorrectAnswer counterOfCorrectAnswer;
@@ -43,6 +43,7 @@ public class AnswerScriptBtn : MonoBehaviour
     public int indexLevel;
 
     private UsingHints usingHints;
+    public SwitchQuestion switchQuestion;
 
     public bool IsAnswerCorrectly { get => isAnswerCorrectly;}
     public bool IsAnswerInCorrectly { get => isAnswerInCorrectly; }
@@ -54,6 +55,7 @@ public class AnswerScriptBtn : MonoBehaviour
 
     private void Start()
     {
+
         WaitTime = timeToWait;
         IndexLevel();
         
@@ -79,7 +81,7 @@ public class AnswerScriptBtn : MonoBehaviour
     {
         Correctly();
         InCorrectly();    
-        Timer();
+        //Timer();
         _isTimer = true;
         isClick = true;
         Debug.Log("Answer True");
@@ -95,7 +97,7 @@ public class AnswerScriptBtn : MonoBehaviour
     {
         InCorrectly();
         Correctly();
-        Timer();
+        //Timer();
         _isTimer = true;
         isClick = true;
         Debug.Log("Answer False");
@@ -134,9 +136,11 @@ public class AnswerScriptBtn : MonoBehaviour
         if (WaitTime <= 0)
         {            
             WaitTime = timeToWait;
+            Debug.Log("STOP THIS TIMER");
             GreenOrRedLamp();
             ChangeQuestion();
-            _isTimer = false;          
+            _isTimer = false;
+            switchQuestion.countQuestion++;
         }
     }
 
@@ -145,8 +149,8 @@ public class AnswerScriptBtn : MonoBehaviour
         countLamp++;
 
 
-        ThisQuestion.SetActive(false);
-        NextQuestion.SetActive(true);
+        //ThisQuestion.SetActive(false);
+        //NextQuestion.SetActive(true);
     }
 
     public void CounterCorrectAnswer()
@@ -183,6 +187,8 @@ public class AnswerScriptBtn : MonoBehaviour
             TheFourthAnswerButton.enabled = false;
         }
     }
+
+    
     public void GreenOrRedLamp()
     {
         if (countLamp == 1 && correctAnswer == 1)
@@ -225,7 +231,6 @@ public class AnswerScriptBtn : MonoBehaviour
         {
             greenLamp.SetActive(true);
         }
-        else if (countLamp == 5 && correctAnswer == 0)
         {
             redLamp.SetActive(true);
         }
@@ -277,6 +282,7 @@ public class AnswerScriptBtn : MonoBehaviour
         }
     }
 
+   
     private void IndexLevel()
     {
         TransferIndexLevel.transferIndexLevel = SceneManager.GetActiveScene().buildIndex;

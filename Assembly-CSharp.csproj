@@ -56,9 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\TimerHearts.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\LoadLevel.cs" />
+    <Compile Include="Assets\Scripts\ArraysQuestion\ArrayQuestion.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\CountGem.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\AnimationOnTheResultPanel.cs" />
     <Compile Include="Assets\Scripts\InfoPanel\SwitchPanel.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferIndexLevel.cs" />
     <Compile Include="Assets\Scripts\InfoPanel\SignsAttention.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\UsingUsualHint.cs" />
-    <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\ArraysQuestion\SpawnerQuestion.cs" />
     <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\UsingHints.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitMenu.cs" />
@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\BackToGameModeMenu.cs" />
     <Compile Include="Assets\Scripts\SHOP\PurchaseIsNotAvailable.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BtnBGTMode.cs" />
+    <Compile Include="Assets\Scripts\ArraysQuestion\QuestionArray.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\ClickMeBTN.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitBtnScript.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\LockLevel.cs" />
@@ -99,7 +100,7 @@
     <Compile Include="Assets\Scripts\SHOP\PageSwaperShop.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ExitBTNToLevelSelected.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MainMenuPlayBtn.cs" />
-    <Compile Include="Assets\Scripts\SpawnerQuestions.cs" />
+    <Compile Include="Assets\Scripts\ArraysQuestion\PullQuestionArray.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\HeartsVersionTwo.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferTheUsualHint.cs" />
     <Compile Include="Assets\Scripts\TestButton.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferStars.cs" />
     <Compile Include="Assets\Scripts\InfoPanel\OpenAndExitInfoPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BackToMenu.cs" />
+    <Compile Include="Assets\Scripts\Level 1 Scripts\SwitchQuestion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

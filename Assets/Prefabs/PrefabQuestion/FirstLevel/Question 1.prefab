@@ -246,7 +246,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 58.4
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.6
+  m_fontSize: 54.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -769,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09900001, y: 0.16000001}
   m_AnchorMax: {x: 0.8681209, y: 0.90465546}
-  m_AnchoredPosition: {x: 0.50001526, y: 0.93099976}
+  m_AnchoredPosition: {x: 0.5, y: 0.93099976}
   m_SizeDelta: {x: -0.513, y: -1.862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7955224766121865687
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.9
+  m_fontSize: 34.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.7
+  m_fontSize: 35.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
+  m_fontSize: 58.4
   m_fontSizeBase: 48.43
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.3
+  m_fontSize: 35.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1808,8 +1808,7 @@ MonoBehaviour:
   TheSecondAnswerButton: {fileID: 7955224766545138848}
   ThirdAnswerButton: {fileID: 7955224765739623944}
   TheFourthAnswerButton: {fileID: 7955224767298709463}
-  ThisQuestion: {fileID: 7955224766854702860}
-  NextQuestion: {fileID: 0}
+  ResultPanel: {fileID: 0}
   timeToWait: 3
   counter: {fileID: 0}
   starsCount: {fileID: 0}
@@ -1817,6 +1816,7 @@ MonoBehaviour:
   greenLamp: {fileID: 0}
   redLamp: {fileID: 0}
   indexLevel: 0
+  switchQuestion: {fileID: 0}
 --- !u!114 &7955224767071747259
 MonoBehaviour:
   m_ObjectHideFlags: 0
