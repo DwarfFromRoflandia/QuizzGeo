@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7684884174650683182}
   m_Layer: 6
   m_Name: TheUsualHintButton
-  m_TagString: Untagged
+  m_TagString: TheUsualHint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6d346691e6dac40b631943f5de5076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintButtons: {fileID: 0}
   usingUsualHint: {fileID: 0}
   timerRing: {fileID: 0}

@@ -14,6 +14,8 @@ public class TimerRing : MonoBehaviour
     
     private AnswerScriptBtn answerScriptBtn;//переменная, которая нужна для того, чтобы иметь возможность работать с методами и переменными из скрипта AnswerBtn
 
+    private SwitchQuestion _switchQuestion;
+    
     private float ontime;//переменная, в которую будет передаваться значение времени таймера
 
     private bool isTimer = true;//переменная, которая отвечает за то, работает наш таймер или нет
@@ -22,6 +24,7 @@ public class TimerRing : MonoBehaviour
     private void Start()
     {
         answerScriptBtn = GetComponent<AnswerScriptBtn>();//берём компонент по соседству, т.к. что этот скрипт, что скрипт AnswerScriptBtn лежат на одном игровом объекте
+        _switchQuestion = transform.parent.parent.GetComponent<SwitchQuestion>();
         ontime = gametime;
     }
 
@@ -51,8 +54,9 @@ public class TimerRing : MonoBehaviour
         if (ontime < 0f)//когда значение таймера меньше 0, то вызывается метод из скрипта AnswerScriptBtn, который переключает вопрос
         {
             isTimer = false;
-            answerScriptBtn.GreenOrRedLamp();
-            answerScriptBtn.ChangeQuestion();
+            answerScriptBtn.Incorrectanswer++;
+            answerScriptBtn.SwitchRedLamp();
+            _switchQuestion.countQuestion++;            
             Debug.Log("Time is out");
         }
     }

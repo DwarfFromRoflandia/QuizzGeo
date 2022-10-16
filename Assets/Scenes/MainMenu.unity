@@ -22283,8 +22283,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbd7a1c72b1b0e4999d04aee29772ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QuestionArrayForSimpleLevel:
+  PrefabLevelArrayForSimpleLevel:
   - {fileID: 4404347479656539399, guid: 0bd774784f18f884abf39156b5a11238, type: 3}
+  - {fileID: 3540239080774808426, guid: de85f628d1106ae4d8520a356ea20d2e, type: 3}
+  - {fileID: 4418870487264316162, guid: ecefdaef2aa0f804091a26752f7a3d8d, type: 3}
+  PrefabLevelArrayForLimitedTimeLevel:
+  - {fileID: 8239540023367883042, guid: 9b7443cada829bf48a6d16c5e9dabd98, type: 3}
+  PrefabLevelArrayForHardLevel:
+  - {fileID: 8089233493289057242, guid: 90748a7bd8d690f4eb374333a4992ba4, type: 3}
 --- !u!1 &1530864112
 GameObject:
   m_ObjectHideFlags: 0
@@ -29091,7 +29097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1693420126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33980,7 +33986,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.45
+  m_fontSize: 55.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

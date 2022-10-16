@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StarsCount : MonoBehaviour
 {    
-    [SerializeField] private CounterAnswer scoreCount;
-
     [Header("¬ключЄнные звЄзды")]
     [SerializeField] private GameObject star1On;
     [SerializeField] private GameObject star2On;
@@ -14,22 +12,24 @@ public class StarsCount : MonoBehaviour
     private int countStar;
     public int CountStars { get => countStar; }
 
+    private CounterOfCorrectAnswer _counterOfCorrectAnswer;
+
     private void Start()
     {
+        _counterOfCorrectAnswer = transform.root.GetComponent<CounterOfCorrectAnswer>();
         CountStar();
     }
 
     public void CountStar()
     {
-        if (scoreCount.Score >= 3 && scoreCount.Score < 6)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 3 && _counterOfCorrectAnswer.CountOfCorrectAnswer < 6)
         {
             star1On.SetActive(true);
 
             countStar += 3;
 
-            
         }
-        if (scoreCount.Score >= 6 && scoreCount.Score < 9)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 6 && _counterOfCorrectAnswer.CountOfCorrectAnswer < 9)
         {
             star1On.SetActive(true);
             star2On.SetActive(true);
@@ -37,7 +37,7 @@ public class StarsCount : MonoBehaviour
             countStar += 6;
 
         }
-        if (scoreCount.Score >= 9)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 9)
         {
             star1On.SetActive(true);
             star2On.SetActive(true);

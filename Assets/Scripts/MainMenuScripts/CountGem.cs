@@ -12,7 +12,7 @@ public class CountGem : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Количество гемов: " + TransferGem.transferGems);    
+        Debug.Log("Количество гемов: " + TransferGem.transferGems);
     }
 
     private void Update()

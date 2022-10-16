@@ -5,79 +5,104 @@ using UnityEngine;
 public class SwitchQuestion : MonoBehaviour
 {
     [SerializeField] private GameObject resultPanel;
-    public List<GameObject> QuestionsList = new List<GameObject>();
-    private bool endLevel;
+
+    public List<GameObject> QuestionsList = new List<GameObject>(); //массив, элементы которого инициализируем в инспекторе, хранит префабы вопросов 
+
+    private List<GameObject> CloneQuestionsList = new List<GameObject>(); //массив, хранящий элементы рандомного порядка определённого количества префабов вопросов
+
+    public List<GameObject> RandomCloneQuestionsList = new List<GameObject>(); //массив, хранящий клонов префабов вопросов в том же порядке и того же количесвта, что и массив CloneQuestionsList
+
+    public static GameObject TestGameObject;
+
+    public GameObject mainGameObject;
 
     public int countQuestion;
 
     private void Start()
     {
+        for (int i = 0; i < 10; i++)
+        {
+            RandomCloneQuestionsList.Add(Instantiate(CloneQuestionsList[i], mainGameObject.transform));
+        }
+
+
         resultPanel.SetActive(false);
+    }
+
+    private void Awake()
+    {
+        int randomQuestion;
+
+        for (int i = 0; i < 10; i++)
+        {
+            do
+            {
+                randomQuestion = Random.Range(0, QuestionsList.Count);
+            }
+            while (CloneQuestionsList.Contains(QuestionsList[randomQuestion]));
+            {           
+                CloneQuestionsList.Add(QuestionsList[randomQuestion]);
+            }
+           
+        }
     }
     private void Update()
     {
+        SwitchQuestions(countQuestion);
+    }
+
+    private void SwitchQuestions(int _countQuestion)
+    {
         for (int i = 0; i < 10; i++)
         {
-            switch (countQuestion)
+            switch (_countQuestion)
             {
                 case 0:
-                    QuestionsList[0].SetActive(true);
+                    RandomCloneQuestionsList[0].SetActive(true);
                     break;
                 case 1:
-                    QuestionsList[0].SetActive(false);
-                    QuestionsList[1].SetActive(true);
+                    RandomCloneQuestionsList[0].SetActive(false);
+                    RandomCloneQuestionsList[1].SetActive(true);
                     break;
                 case 2:
-                    QuestionsList[1].SetActive(false);
-                    QuestionsList[2].SetActive(true);
+                    RandomCloneQuestionsList[1].SetActive(false);
+                    RandomCloneQuestionsList[2].SetActive(true);
                     break;
                 case 3:
-                    QuestionsList[2].SetActive(false);
-                    QuestionsList[3].SetActive(true);
+                    RandomCloneQuestionsList[2].SetActive(false);
+                    RandomCloneQuestionsList[3].SetActive(true);
                     break;
                 case 4:
-                    QuestionsList[3].SetActive(false);
-                    QuestionsList[4].SetActive(true);
+                    RandomCloneQuestionsList[3].SetActive(false);
+                    RandomCloneQuestionsList[4].SetActive(true);
                     break;
                 case 5:
-                    QuestionsList[4].SetActive(false);
-                    QuestionsList[5].SetActive(true);
+                    RandomCloneQuestionsList[4].SetActive(false);
+                    RandomCloneQuestionsList[5].SetActive(true);
                     break;
                 case 6:
-                    QuestionsList[5].SetActive(false);
-                    QuestionsList[6].SetActive(true);
+                    RandomCloneQuestionsList[5].SetActive(false);
+                    RandomCloneQuestionsList[6].SetActive(true);
                     break;
                 case 7:
-                    QuestionsList[6].SetActive(false);
-                    QuestionsList[7].SetActive(true);
+                    RandomCloneQuestionsList[6].SetActive(false);
+                    RandomCloneQuestionsList[7].SetActive(true);
                     break;
                 case 8:
-                    QuestionsList[7].SetActive(false);
-                    QuestionsList[8].SetActive(true);
+                    RandomCloneQuestionsList[7].SetActive(false);
+                    RandomCloneQuestionsList[8].SetActive(true);
                     break;
                 case 9:
-                    QuestionsList[8].SetActive(false);
-                    QuestionsList[9].SetActive(true);
+                    RandomCloneQuestionsList[8].SetActive(false);
+                    RandomCloneQuestionsList[9].SetActive(true);
                     break;
                 case 10:
-                    QuestionsList[9].SetActive(true);
-                    endLevel = true;
+                    RandomCloneQuestionsList[9].SetActive(true);
+                    resultPanel.SetActive(true);
                     break;
                 default:
                     break;
             }
         }
-
-        OnResultPanel();
-
-
-    }
-
-    private void OnResultPanel()
-    {
-        if (endLevel)
-        {
-            resultPanel.SetActive(true);
-        }      
     }
 }

@@ -19,16 +19,15 @@ public class AnimationOnTheResultPanel : MonoBehaviour
 
     [SerializeField] private Button buttonExitToMenu;
 
-    private CounterAnswer counterAnswer;
-    private StarsCount starsCount;
-    private CounterOfCorrectAnswer counterOfCorrectAnswer;
+    private CounterOfCorrectAnswer _counterOfCorrectAnswer;
+    private StartCoroutineInTheResultPanelScript startCoroutineInTheResultPanelScript;
 
-    private bool startAnimCoroutine = true;
+   // [SerializeField] private EarnedDiamondsText earnedDiamondsText;
+
     private void Start()
     {
-        counterAnswer = GetComponent<CounterAnswer>();
-        starsCount = GetComponent<StarsCount>();
-        counterOfCorrectAnswer = GetComponent<CounterOfCorrectAnswer>();
+        startCoroutineInTheResultPanelScript = GetComponent<StartCoroutineInTheResultPanelScript>();
+        _counterOfCorrectAnswer = transform.root.GetComponent<CounterOfCorrectAnswer>();
 
         buttonExitToMenu.enabled = false;
 
@@ -118,15 +117,19 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         animationThreeDiamond.SetTrigger("ThreeDiamonds");
-        counterOfCorrectAnswer.Points += 1;
+
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.45f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
     }
 
     public IEnumerator CoroutineAnimationOfGettingSixDiamondsEarned()
@@ -136,27 +139,34 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         animationSixDiamond.SetTrigger("SixDiamonds");
-        counterOfCorrectAnswer.Points += 1; 
+
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1; 
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
         
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
     }
 
@@ -167,58 +177,68 @@ public class AnimationOnTheResultPanel : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         animationNineDiamond.SetTrigger("NineDiamonds");
-        counterOfCorrectAnswer.Points += 1;      
+
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;      
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+       // earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.5f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
 
         yield return new WaitForSeconds(0.4f);
 
-        counterOfCorrectAnswer.Points += 1;
+        //earnedDiamondsText.TextEarnedDiamond(+1);
+        startCoroutineInTheResultPanelScript.Points += 1;
     }
     private void StartAnmationStars()
     {
-        if (counterAnswer.Score >= 0 && counterAnswer.Score < 3)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 0 && _counterOfCorrectAnswer.CountOfCorrectAnswer < 3)
         {
             StartCoroutine(CoroutineAnimationZeroStar(ExitToMenuAnim));
         }
 
-        if (counterAnswer.Score >= 3 && counterAnswer.Score < 6)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 3 && _counterOfCorrectAnswer.CountOfCorrectAnswer < 6)
         {
             StartCoroutine(CoroutineAnimationOneStar(ExitToMenuAnim));
         }
 
-        if (counterAnswer.Score >= 6 && counterAnswer.Score < 9)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 6 && _counterOfCorrectAnswer.CountOfCorrectAnswer < 9)
         {
             StartCoroutine(CoroutineAnimationTwoStars(ExitToMenuAnim));
         }
 
-        if (counterAnswer.Score >= 9)
+        if (_counterOfCorrectAnswer.CountOfCorrectAnswer >= 9)
         {
             StartCoroutine(CoroutineAnimationThreeStars(ExitToMenuAnim));
         }

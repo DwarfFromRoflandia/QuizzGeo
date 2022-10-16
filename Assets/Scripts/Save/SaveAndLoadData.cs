@@ -15,6 +15,7 @@ public class SaveAndLoadData : MonoBehaviour
     [SerializeField] private SwitchPanel switchPanel;
 
 
+
     [Header("Значения переменных для сохранения жизней")]
     private HeartsVersionTwo heartsVersionTwo;
     private TimerHearts timerHealth;
@@ -53,13 +54,25 @@ public class SaveAndLoadData : MonoBehaviour
     public bool _isOpenCreamPanel;
 
     private int countLoadGame;//счётчик, благодаря которому загрузку данных мы будем производить только один раз за одну игровую сессию
-    
+
     public bool _isLoadGameData;//переменная, которая отвечает за то, чтобы загрузка данных не срабатывала, когда игрок только впервые заходит в игру, во избежания багов
+
+
+
+    //[Header("Значения переменных для сохранения массивов с префабами уровней")]
+    //public List<GameObject> _PullPrefabLevelForSimpleLevel = new List<GameObject>();
+    //public List<GameObject> _PullPrefabLevelForLimitedTimeLevel = new List<GameObject>();
+    //public List<GameObject> _PullPrefabLevelForForHardLevel = new List<GameObject>();
+
+    //public bool _isActivateAssignment;
+
+    private PrefabLevelArray prefabLevelArray;
 
     private void Start()
     {
         heartsVersionTwo = GetComponent<HeartsVersionTwo>();
         timerHealth = GetComponent<TimerHearts>();
+        prefabLevelArray = GetComponent<PrefabLevelArray>();
 
         Load();
     }
@@ -97,6 +110,13 @@ public class SaveAndLoadData : MonoBehaviour
 
         _isOpenInfoPanel = openAndExitInfoPanel.IsOpenInfoPanel;
         _isOpenCreamPanel = switchPanel.IsOpenCreamPanel;
+
+        //_PullPrefabLevelForSimpleLevel = PullPrefabLevelArray.instance.PullPrefabLevelForSimpleLevel;
+        //_PullPrefabLevelForLimitedTimeLevel = prefabLevelArray.PrefabLevelArrayForLimitedTimeLevel;
+        //_PullPrefabLevelForForHardLevel = prefabLevelArray.PrefabLevelArrayForHardLevel;
+
+        //_isActivateAssignment = PrefabLevelArray.isActivateAssignment;
+
 
     }
     public void Save()
@@ -138,6 +158,13 @@ public class SaveAndLoadData : MonoBehaviour
             _isOpenInfoPanel = data.isOpenInfoPanel;
             _isOpenCreamPanel = data.isOpenCreamPanel;
 
+            //_PullPrefabLevelForSimpleLevel = data.PullPrefabLevelForSimpleLevel;
+            //_PullPrefabLevelForLimitedTimeLevel = data.PullPrefabLevelForLimitedTimeLevel;
+            //_PullPrefabLevelForForHardLevel = data.PullPrefabLevelForForHardLevel;
+            //_isActivateAssignment = data.isActivateAssignment;
+
+
+            //****************************************************************************************************************************************************
 
 
             countGem.QuantityGem = data.diamonds;
@@ -166,6 +193,12 @@ public class SaveAndLoadData : MonoBehaviour
 
             openAndExitInfoPanel.IsOpenInfoPanel = data.isOpenInfoPanel;
             switchPanel.IsOpenCreamPanel = data.isOpenCreamPanel;
+
+            //PullPrefabLevelArray.instance.PullPrefabLevelForSimpleLevel = data.PullPrefabLevelForSimpleLevel;
+            //prefabLevelArray.PrefabLevelArrayForLimitedTimeLevel = data.PullPrefabLevelForLimitedTimeLevel;
+            //prefabLevelArray.PrefabLevelArrayForHardLevel = data.PullPrefabLevelForForHardLevel;
+
+             //PrefabLevelArray.isActivateAssignment = data.isActivateAssignment;
 
 
             Debug.Log("Переменная _diamonds равна значению: " + _diamonds);

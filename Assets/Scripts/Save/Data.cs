@@ -38,6 +38,13 @@ public class Data
 
     public bool isLoadGameData;
 
+    //public List<GameObject> PullPrefabLevelForSimpleLevel = new List<GameObject>();
+    //public List<GameObject> PullPrefabLevelForLimitedTimeLevel = new List<GameObject>();
+    //public List<GameObject> PullPrefabLevelForForHardLevel = new List<GameObject>();
+
+    //public bool isActivateAssignment;
+
+
     //ниже мы создаём конструктор для нашего класса
     public Data (SaveAndLoadData saveAndLoadData) 
     {
@@ -69,5 +76,11 @@ public class Data
         isOpenCreamPanel = saveAndLoadData._isOpenCreamPanel;
 
         isLoadGameData = saveAndLoadData._isLoadGameData;
+
+
+        //PullPrefabLevelForSimpleLevel = saveAndLoadData._PullPrefabLevelForSimpleLevel;
+        //PullPrefabLevelForLimitedTimeLevel = saveAndLoadData._PullPrefabLevelForLimitedTimeLevel;
+        //PullPrefabLevelForForHardLevel = saveAndLoadData._PullPrefabLevelForForHardLevel;
+        //isActivateAssignment = saveAndLoadData._isActivateAssignment;
     }
 }
