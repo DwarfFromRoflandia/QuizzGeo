@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Products : MonoBehaviour
 {
 
+
     public Button _BuyTheUsualHint;
     public Button _BuyTheFiftyFiftyHint;
 
@@ -50,6 +51,8 @@ public class Products : MonoBehaviour
     private bool isHeartsRecovered = false;
     public bool IsheartsRecovered { get { return isHeartsRecovered; } set { isHeartsRecovered = value; } }
 
+
+
     private void Update()
     {
         RestoringHearts();
@@ -66,9 +69,12 @@ public class Products : MonoBehaviour
         SetDisabledTheUsualHintText();
         SetDisabledTheFiftyFiftyHintText();
 
-        AnimationOfTheFirstProduct();
-        AnimationOfTheFiftyFiftyHint();
-        AnimationHearts();
+        //AnimationOfTheFirstProduct();
+        //AnimationOfTheFiftyFiftyHint();
+        //AnimationHearts();
+        AnimationProducts();
+
+
     }
 
 
@@ -121,18 +127,19 @@ public class Products : MonoBehaviour
         }
     }
 
-    private void SetQuantityTheUsualHint()
+    private string SetQuantityTheUsualHint()
     {
         quantityTheUsualHint++;
-        quantityTheUsualHintText.text = quantityTheUsualHint.ToString();
         Debug.Log("Количество обычных подсказок: " + quantityTheUsualHint);
+        return quantityTheUsualHintText.text = quantityTheUsualHint.ToString();     
     }
 
-    private void SetQuantityTheFiftyFiftyHint()
+    private string SetQuantityTheFiftyFiftyHint()
     {
         quantityTheFiftyFiftyHint++;
-        quantityTheFiftyFiftyHintText.text = quantityTheFiftyFiftyHint.ToString();
-        Debug.Log("Количество подсказок 50/50: " + quantityTheFiftyFiftyHint);       
+        Debug.Log("Количество подсказок 50/50: " + quantityTheFiftyFiftyHint);
+        return quantityTheFiftyFiftyHintText.text = quantityTheFiftyFiftyHint.ToString();
+            
     }
 
 
@@ -177,29 +184,47 @@ public class Products : MonoBehaviour
              _BuyTheFiftyFiftyHint.enabled = false;    
     }
 
-    private void AnimationOfTheFirstProduct()
+    private void AnimationProducts()
     {
-        if (pageSwaperShop.CurrentPage == 1)
-            animationTheUsualHint.SetBool("AnimationTheUsualHint", true);
-        else if (shopOpenAndExit.IsShopClosed == true)
-            animationTheUsualHint.SetBool("AnimationTheUsualHint", false);
+        switch (pageSwaperShop.CurrentPage)
+        {
+            case 1:
+                if (!shopOpenAndExit.IsShopClosed) animationTheUsualHint.SetBool("AnimationTheUsualHint", true);
+                break;
+            case 2:
+                if (!shopOpenAndExit.IsShopClosed) animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", true);
+                break;
+            case 3:
+                if (!shopOpenAndExit.IsShopClosed) animationHearts.SetBool("AnimationHearts", true);
+                break;
+            default:
+                break;
+        }
     }
 
-    private void AnimationOfTheFiftyFiftyHint()
-    {
-        if (pageSwaperShop.CurrentPage == 2)
-            animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", true);
-        else if (shopOpenAndExit.IsShopClosed == true)
-            animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", false);
-    }
+    //private void AnimationOfTheFirstProduct()
+    //{
+    //    if (pageSwaperShop.CurrentPage == 1)
+    //        animationTheUsualHint.SetBool("AnimationTheUsualHint", true);
+    //    else if (shopOpenAndExit.IsShopClosed == true)
+    //        animationTheUsualHint.SetBool("AnimationTheUsualHint", false);
+    //}
 
-    private void AnimationHearts()
-    {
-        if (pageSwaperShop.CurrentPage == 3)
-            animationHearts.SetBool("AnimationHearts", true);
-        else if (shopOpenAndExit.IsShopClosed == true)
-            animationHearts.SetBool("AnimationHearts", false);
-    }
+    //private void AnimationOfTheFiftyFiftyHint()
+    //{
+    //    if (pageSwaperShop.CurrentPage == 2)
+    //        animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", true);
+    //    else if (shopOpenAndExit.IsShopClosed == true)
+    //        animationTheFiftyFiftyHint.SetBool("AnimationTheFiftyFiftyHint", false);
+    //}
+
+    //private void AnimationHearts()
+    //{
+    //    if (pageSwaperShop.CurrentPage == 3)
+    //        animationHearts.SetBool("AnimationHearts", true);
+    //    else if (shopOpenAndExit.IsShopClosed == true)
+    //        animationHearts.SetBool("AnimationHearts", false);
+    //}
     private void SetDisabledTheUsualHintText()
     {
         if (!coroutineBuyTheUsualHint)

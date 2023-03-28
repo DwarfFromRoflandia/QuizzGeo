@@ -8,5 +8,5 @@ public class CounterOfCorrectAnswer : MonoBehaviour
     public int CountOfCorrectAnswer { get { return countOfCorrectAnswer; } set { countOfCorrectAnswer = value; } }
 
 
-
+  
 }

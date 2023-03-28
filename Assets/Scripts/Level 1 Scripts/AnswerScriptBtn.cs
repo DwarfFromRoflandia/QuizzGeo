@@ -65,7 +65,14 @@ public class AnswerScriptBtn : MonoBehaviour
         _isTimer = true;
         isClick = true;
         correctAnswer++;
-        _counterOfCorrectAnswer.CountOfCorrectAnswer++; 
+        _counterOfCorrectAnswer.CountOfCorrectAnswer++;
+        TransferValuesForDataBase._Score++;
+
+        if (EventManager.ChangeQuantityScoreEvent != null)
+        {
+            EventManager.ChangeQuantityScoreEvent.Invoke(TransferValuesForDataBase._Score);
+            Debug.Log("¬€«Œ¬ »¬≈Õ“¿");
+        }
         Debug.Log("Answer True");
     }
 

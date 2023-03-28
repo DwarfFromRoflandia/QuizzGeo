@@ -85,10 +85,12 @@
     <Compile Include="Assets\Scripts\Level 1 Scripts\StarsCount.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\TimerRing.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\EarnedDiamondsText.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\SHOP\Products.cs" />
     <Compile Include="Assets\Scripts\HintsScript\UIButtonTheUsualHint.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\ShopOpenAndExit.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferGem.cs" />
+    <Compile Include="Assets\Scripts\SecondTestGameObjectScript.cs" />
     <Compile Include="Assets\Scripts\LevelSelectedMenuScripts\BackToGameModeMenu.cs" />
     <Compile Include="Assets\Scripts\SHOP\PurchaseIsNotAvailable.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BtnBGTMode.cs" />
@@ -112,14 +114,12 @@
     <Compile Include="Assets\Scripts\TestButton.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferValueLevelToUnlock.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\SwitchQuestion.cs" />
-    <Compile Include="Assets\Scripts\SecondTestGameObject.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\BackToLevelSelected.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferSaveManager.cs" />
     <Compile Include="Assets\Scripts\Transfer Scripts\TransferStars.cs" />
     <Compile Include="Assets\Scripts\InfoPanel\OpenAndExitInfoPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\BackToMenu.cs" />
     <Compile Include="Assets\Scripts\Level 1 Scripts\StartCoroutineInTheResultPanelScript.cs" />
-    <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -796,6 +796,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="GameAssembler.csproj">
+      <Project>{96C4EF07-7F08-28EB-FC12-13E55588E836}</Project>
+      <Name>GameAssembler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -38,6 +38,18 @@ public class Data
 
     public bool isLoadGameData;
 
+    public int ID;
+    public string Nickname;
+    public string Password;
+    public int Score;
+    public int CountGetDataFromDataBase;
+
+    public bool isLoadingDataForDataBase;
+    public bool isRegistration;
+
+    public string nicknameInRegistration;
+    public string passwordInRegistration;
+
     //public List<GameObject> PullPrefabLevelForSimpleLevel = new List<GameObject>();
     //public List<GameObject> PullPrefabLevelForLimitedTimeLevel = new List<GameObject>();
     //public List<GameObject> PullPrefabLevelForForHardLevel = new List<GameObject>();
@@ -77,6 +89,17 @@ public class Data
 
         isLoadGameData = saveAndLoadData._isLoadGameData;
 
+        ID = saveAndLoadData._ID;
+        Nickname = saveAndLoadData._Nickname;
+        Password = saveAndLoadData._Password;
+        Score = saveAndLoadData._Score;
+        CountGetDataFromDataBase = saveAndLoadData._CountGetDataFromDataBase;
+
+        isLoadingDataForDataBase = saveAndLoadData._isLoadingDataForDataBase;
+        isRegistration = saveAndLoadData._isRegistration;
+
+        nicknameInRegistration = saveAndLoadData._nicknameInRegistration;
+        passwordInRegistration = saveAndLoadData._passwordInRegistration;
 
         //PullPrefabLevelForSimpleLevel = saveAndLoadData._PullPrefabLevelForSimpleLevel;
         //PullPrefabLevelForLimitedTimeLevel = saveAndLoadData._PullPrefabLevelForLimitedTimeLevel;
